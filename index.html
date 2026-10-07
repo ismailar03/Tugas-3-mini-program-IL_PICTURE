@@ -1,0 +1,417 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="IL_PICTURE — sewa iPhone untuk setiap momen."
+    />
+    <title>IL_PICTURE — Rental iPhone</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <a
+        class="brand"
+        href="#home"
+        data-view-link="home"
+        aria-label="IL_PICTURE Home"
+        >IL_PICTURE<span class="brand-dot">.</span></a
+      >
+      <nav class="main-nav" aria-label="Navigasi utama">
+        <a href="#home" data-view-link="home">Home</a>
+        <a href="#iphone" data-view-link="iphone">iPhone</a>
+        <a href="#my-rentals" data-view-link="my-rentals">Sewa Saya</a>
+        <a href="#history" data-view-link="history">Riwayat</a>
+      </nav>
+      <a class="header-cta" href="#iphone" data-view-link="iphone"
+        >Mulai menyewa <span aria-hidden="true">↗</span></a
+      >
+    </header>
+
+    <main>
+      <section class="page-view home-view" id="view-home" data-view="home">
+        <div class="hero">
+          <div class="hero-content">
+            <p class="eyebrow"><span></span> IL_PICTURE IPHONE RENTAL</p>
+            <h1>Sewa iPhone<br />untuk Setiap <em>Momen</em></h1>
+            <p class="hero-description">
+              Pilih iPhone favoritmu, tentukan lama sewa, dan nikmati pengalaman
+              menggunakan iPhone tanpa harus membeli.
+            </p>
+            <a class="button button-dark" href="#iphone" data-view-link="iphone"
+              >Lihat iPhone <span aria-hidden="true">↗</span></a
+            >
+            <div class="hero-social-proof">
+              <div class="avatar-stack"><i>i</i><i>i</i><i>i</i></div>
+              <span
+                >Perangkat pilihan.<br /><strong
+                  >Momen tak terlupakan.</strong
+                ></span
+              >
+            </div>
+          </div>
+          <div class="hero-visual" aria-label="Ilustrasi perangkat iPhone">
+            <div class="visual-circle"></div>
+            <div class="hero-phone hero-phone-back">
+              <span class="camera camera-one"></span
+              ><span class="camera camera-two"></span
+              ><span class="camera camera-three"></span>
+            </div>
+            <div class="hero-phone hero-phone-front">
+              <span class="notch"></span><span class="screen-glow"></span>
+            </div>
+            <span class="visual-caption">CAPTURE YOUR<br />NEXT CHAPTER</span>
+            <span class="visual-spark">✳</span>
+          </div>
+          <div class="hero-bottom">
+            <span>01 — TEMUKAN PERANGKATMU</span
+            ><span>MADE FOR YOUR EVERYDAY STORY</span>
+          </div>
+        </div>
+
+        <section class="content-section featured-section">
+          <div class="section-title">
+            <div>
+              <p class="eyebrow">PILIHAN UNTUKMU</p>
+              <h2>iPhone favorit, siap disewa.</h2>
+            </div>
+            <a class="text-link" href="#iphone" data-view-link="iphone"
+              >Lihat semua iPhone <span aria-hidden="true">↗</span></a
+            >
+          </div>
+          <div class="product-grid" id="home-products"></div>
+        </section>
+        <section class="home-note">
+          <span class="note-mark">IL.</span>
+          <p>Perangkat yang pas untuk <strong>cerita berikutnya.</strong></p>
+          <span>SEWA DENGAN MUDAH — BUAT MOMEN BERARTI</span>
+        </section>
+      </section>
+
+      <section
+        class="page-view content-page"
+        id="view-iphone"
+        data-view="iphone"
+        hidden
+      >
+        <div class="page-heading">
+          <p class="eyebrow">KATALOG IL_PICTURE</p>
+          <h1>Pilih iPhone<br />Favoritmu<span class="brand-dot">.</span></h1>
+          <p>
+            Temukan teman terbaik untuk perjalanan, pekerjaan, dan momen
+            spesialmu.
+          </p>
+        </div>
+        <div class="product-grid catalog-grid" id="catalog-products"></div>
+      </section>
+
+      <section
+        class="page-view content-page"
+        id="view-rental"
+        data-view="rental"
+        hidden
+      >
+        <a class="back-link" href="#iphone" data-view-link="iphone"
+          >← Kembali ke iPhone</a
+        >
+        <div class="booking-layout">
+          <div class="booking-intro">
+            <p class="eyebrow">DETAIL PENYEWAAN</p>
+            <h1>Rencanakan<br />momenmu<span class="brand-dot">.</span></h1>
+            <p>Isi detail penyewaan dan kami siapkan iPhone pilihanmu.</p>
+            <div
+              class="booking-product-preview"
+              id="booking-product-preview"
+            ></div>
+          </div>
+          <form class="booking-card" id="booking-form">
+            <div class="card-heading">
+              <span class="step-label">LANGKAH 01 / 02</span>
+              <h2>Data penyewa</h2>
+              <p>Lengkapi informasi untuk melanjutkan.</p>
+            </div>
+            <label for="renter-name">Nama</label>
+            <input
+              id="renter-name"
+              name="name"
+              type="text"
+              placeholder="Masukkan nama"
+              autocomplete="name"
+              required
+            />
+            <label for="renter-whatsapp">Nomor WhatsApp</label>
+            <input
+              id="renter-whatsapp"
+              name="whatsapp"
+              type="tel"
+              placeholder="Masukkan nomor WhatsApp"
+              autocomplete="tel"
+              required
+            />
+            <div class="divider"></div>
+            <div class="card-heading compact-heading">
+              <span class="step-label">DETAIL RENTAL</span>
+              <h2 id="booking-phone-name">iPhone</h2>
+            </div>
+            <label for="start-date">Tanggal mulai</label>
+            <input id="start-date" name="startDate" type="date" required />
+            <label for="return-date">Tanggal kembali</label>
+            <input id="return-date" name="returnDate" type="date" required />
+            <div class="booking-summary">
+              <div>
+                <span>Durasi sewa</span><strong id="booking-duration">—</strong>
+              </div>
+              <div>
+                <span>Harga per hari</span><strong id="booking-price">—</strong>
+              </div>
+              <div class="summary-total">
+                <span>Total sewa</span><strong id="booking-total">—</strong>
+              </div>
+            </div>
+            <p
+              class="inline-message"
+              id="booking-message"
+              role="status"
+              aria-live="polite"
+            ></p>
+            <button class="button button-dark button-wide" type="submit">
+              Lanjutkan Penyewaan <span aria-hidden="true">→</span>
+            </button>
+          </form>
+        </div>
+      </section>
+
+      <section
+        class="page-view content-page"
+        id="view-payment"
+        data-view="payment"
+        hidden
+      >
+        <a class="back-link" href="#rental" data-view-link="rental"
+          >← Kembali ke detail sewa</a
+        >
+        <div class="payment-layout">
+          <div class="payment-intro">
+            <p class="eyebrow">LANGKAH TERAKHIR</p>
+            <h1>Konfirmasi<br />penyewaan<span class="brand-dot">.</span></h1>
+            <p>
+              Periksa kembali detail rental sebelum menyelesaikan pembayaran.
+            </p>
+          </div>
+          <form class="booking-card payment-card" id="payment-form">
+            <div class="card-heading">
+              <span class="step-label">RINGKASAN PENYEWAAN</span>
+              <h2>Hampir jadi milikmu.</h2>
+            </div>
+            <div class="payment-phone-art">
+              <span class="mini-phone"></span>
+              <div>
+                <h3 id="payment-phone-name">iPhone</h3>
+                <p id="payment-dates">Tanggal sewa</p>
+              </div>
+            </div>
+            <div class="booking-summary payment-summary">
+              <div>
+                <span>Durasi sewa</span><strong id="payment-duration">—</strong>
+              </div>
+              <div>
+                <span>Harga per hari</span><strong id="payment-price">—</strong>
+              </div>
+              <div class="summary-total">
+                <span>Total sewa</span><strong id="payment-total">—</strong>
+              </div>
+            </div>
+            <label for="payment-amount">Uang Pembayaran</label>
+            <div class="money-input">
+              <span>Rp</span
+              ><input
+                id="payment-amount"
+                name="payment"
+                type="number"
+                min="0"
+                step="1000"
+                placeholder="Masukkan nominal"
+                required
+              />
+            </div>
+            <p
+              class="inline-message"
+              id="payment-message"
+              role="status"
+              aria-live="polite"
+            ></p>
+            <div class="payment-success" id="payment-success" hidden></div>
+            <button
+              class="button button-dark button-wide"
+              id="confirm-payment"
+              type="submit"
+            >
+              Konfirmasi Pembayaran <span aria-hidden="true">→</span>
+            </button>
+          </form>
+        </div>
+      </section>
+
+      <section
+        class="page-view content-page list-page"
+        id="view-my-rentals"
+        data-view="my-rentals"
+        hidden
+      >
+        <div class="page-heading">
+          <p class="eyebrow">RUANG PENYEWAMU</p>
+          <h1>Sewa Saya<span class="brand-dot">.</span></h1>
+          <p>Lihat perangkat yang sedang menemani ceritamu.</p>
+        </div>
+        <div class="rental-list" id="active-rentals"></div>
+      </section>
+
+      <section
+        class="page-view content-page list-page"
+        id="view-history"
+        data-view="history"
+        hidden
+      >
+        <div class="page-heading">
+          <p class="eyebrow">MOMEN YANG TERSIMPAN</p>
+          <h1>Riwayat Sewa<span class="brand-dot">.</span></h1>
+          <p>Semua penyewaanmu, tercatat rapi di satu tempat.</p>
+        </div>
+        <div class="rental-list" id="rental-history"></div>
+      </section>
+
+      <section
+        class="page-view lab-page"
+        id="view-testing-lab"
+        data-view="testing-lab"
+        hidden
+      >
+        <div class="lab-banner">
+          <p class="eyebrow">IL_PICTURE / QUALITY STUDIO</p>
+          <h1>Testing Lab<span class="brand-dot">.</span></h1>
+          <p>
+            Eksperimen terpisah untuk menguji logika rental, menghimpun bukti,
+            dan menemukan root cause.
+          </p>
+          <span class="lab-stamp">TEST<br />OBSERVE<br />LEARN</span>
+        </div>
+        <div class="lab-body">
+          <div class="lab-intro">
+            <div>
+              <p class="eyebrow">FAULT FINDING</p>
+              <h2>Tiga skenario.<br />Satu lab independen.</h2>
+            </div>
+            <p>
+              Pengujian kalkulasi memakai input mandiri. Untuk membuktikan Fault
+              2, lakukan penyewaan berulang melalui katalog sampai stok
+              perangkat menjadi nol.
+            </p>
+          </div>
+          <div class="lab-grid">
+            <article class="lab-card">
+              <div class="lab-card-top">
+                <span>FAULT / 01</span><span class="lab-icon">×</span>
+              </div>
+              <h3>Fault 1: Perhitungan Total Sewa</h3>
+              <p>Uji kalkulasi harga sewa berdasarkan durasi.</p>
+              <label for="fault1-price">Harga per hari (Rp)</label
+              ><input id="fault1-price" type="number" min="0" value="60000" />
+              <label for="fault1-days">Durasi (hari)</label
+              ><input id="fault1-days" type="number" min="1" value="3" />
+              <button
+                class="button button-outline"
+                id="test-fault-1"
+                type="button"
+              >
+                Uji Fault 1 <span aria-hidden="true">↗</span>
+              </button>
+              <div class="test-result" id="fault1-result" aria-live="polite">
+                Hasil Expected, Actual, dan Status akan tampil di sini.
+              </div>
+            </article>
+            <article class="lab-card">
+              <div class="lab-card-top">
+                <span>FAULT / 02</span><span class="lab-icon">0</span>
+              </div>
+              <h3>Fault 2: Validasi Stok</h3>
+              <p>
+                Saat stok 0, rental seharusnya ditolak. Uji utama dilakukan
+                lewat katalog dan formulir rental.
+              </p>
+              <label for="fault2-stock">Stok saat diuji</label
+              ><input id="fault2-stock" type="number" min="0" value="0" />
+              <button
+                class="button button-outline"
+                id="test-fault-2"
+                type="button"
+              >
+                Uji Fault 2 <span aria-hidden="true">↗</span>
+              </button>
+              <div class="test-result" id="fault2-result" aria-live="polite">
+                Hasil Expected, Actual, dan Status akan tampil di sini.
+              </div>
+            </article>
+            <article class="lab-card">
+              <div class="lab-card-top">
+                <span>FAULT / 03</span><span class="lab-icon">−</span>
+              </div>
+              <h3>Fault 3: Validasi Pembayaran</h3>
+              <p>Simulasikan pembayaran di bawah total sewa.</p>
+              <label for="fault3-total">Total sewa (Rp)</label
+              ><input id="fault3-total" type="number" min="0" value="180000" />
+              <label for="fault3-payment">Uang pembayaran (Rp)</label
+              ><input
+                id="fault3-payment"
+                type="number"
+                min="0"
+                value="150000"
+              />
+              <button
+                class="button button-outline"
+                id="test-fault-3"
+                type="button"
+              >
+                Uji Fault 3 <span aria-hidden="true">↗</span>
+              </button>
+              <div class="test-result" id="fault3-result" aria-live="polite">
+                Hasil Expected, Actual, dan Status akan tampil di sini.
+              </div>
+              <button
+                class="button button-outline lab-fixture-button"
+                id="open-fault3-main-flow"
+                type="button"
+              >
+                Uji pada pembayaran utama <span aria-hidden="true">↗</span>
+              </button>
+              <p
+                class="lab-fixture-message"
+                id="fault3-fixture-message"
+                role="status"
+                aria-live="polite"
+              ></p>
+            </article>
+          </div>
+          <p class="lab-footnote">
+            <span>i</span> Uji Fault 2 pada Testing Lab hanya memeriksa logika
+            stok. Bukti Fault 2 utama terlihat saat mencoba rental melalui
+            katalog dan alur pembayaran biasa.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <a class="brand" href="#home" data-view-link="home"
+        >IL_PICTURE<span class="brand-dot">.</span></a
+      >
+      <a href="#testing-lab" data-view-link="testing-lab"
+        >Testing Lab <span aria-hidden="true">↗</span></a
+      >
+      <span>YOUR MOMENT, YOUR IPHONE.</span>
+      <span>© 2026 IL_PICTURE</span>
+    </footer>
+  </body>
+</html>
